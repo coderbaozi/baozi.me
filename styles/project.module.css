@@ -1,0 +1,48 @@
+.project {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.tech {
+  position: relative;
+}
+
+.tech span {
+  font-size: 1em;
+  color: var(--mark);
+  font-weight: 700;
+  opacity: 0.6;
+  position: absolute;
+}
+
+.icon {
+  font-size: 3em;
+  color: var(--element3);
+}
+
+.name {
+  color: var(--element3);
+}
+
+.description {
+  width: 250px;
+  color: var(--element5);
+}
+
+.project:hover {
+  background-color: var(--element7);
+}
+
+.project:hover .name {
+  color: var(--element2);
+}
+
+.project:hover .icon {
+  color: var(--element2);
+}
+
+.project:hover .description {
+  color: var(--element4);
+}

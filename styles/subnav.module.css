@@ -1,0 +1,23 @@
+.subnav {
+  display: flex;
+  gap: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--element5);
+}
+
+.subnav a {
+  font-size: 28px;
+}
+
+.subnav a:hover {
+  color: var(--element4);
+}
+
+.active {
+  color: var(--element1);
+}
+
+.active:hover {
+  color: var(--element1) !important;
+}

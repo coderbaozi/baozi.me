@@ -1,0 +1,39 @@
+.blog {
+  cursor: pointer;
+  margin-bottom: 38px;
+}
+
+.blog:hover .title {
+  color: var(--element1);
+}
+
+.blog:hover .date {
+  color: var(--element4);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--element4);
+}
+
+.date {
+  font-size: 16px;
+  color: var(--element5);
+}
+
+.year {
+  position: relative;
+  height: 5rem;
+  pointer-events: none;
+}
+
+.year span {
+  position: absolute;
+  color: var(--element4);
+  font-size: 8em;
+  left: -3rem;
+  top: -1rem;
+  opacity: 0.1;
+  font-weight: bolder;
+}
