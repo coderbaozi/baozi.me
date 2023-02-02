@@ -12,6 +12,7 @@
   font-weight: 800;
   letter-spacing: -0.05rem;
   margin: 1rem 0;
+  color: var(--element1);
 }
 
 .headingLg {
@@ -23,6 +24,7 @@
 .headingMd {
   font-size: 1.2rem;
   line-height: 1.5;
+  color: var(--element2);
 }
 
 .borderCircle {

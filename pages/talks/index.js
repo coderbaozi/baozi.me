@@ -18,7 +18,7 @@ export default function ListPosts({postsData}) {
                   <span>{getpostYear(data.date)}</span>
                 </div>
               ):''}
-            <li className={stylesPost.blog}>
+            <li className={stylesPost.blog} key={data.id}>
               <Link href={`blog/${data.id}`}>
               <p className={stylesPost.title}>{data.title}</p>
               <p className={stylesPost.date}>
@@ -35,8 +35,8 @@ export default function ListPosts({postsData}) {
   )
 }
 
-export function getStaticProps() {
-  const postsData = getSortedPostsData()
+export async function getStaticProps() {
+  const postsData = await getSortedPostsData()
   return {
     props: {
       postsData

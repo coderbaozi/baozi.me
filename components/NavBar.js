@@ -1,8 +1,13 @@
 import Link from 'next/link'
-import Script from 'next/script'
+import { useEffect } from 'react'
 import styles from '../styles/navbar.module.css'
 import Icon from './Icon'
-export default function NavBar(){
+export default function NavBar({themeState}){
+  // toggle html theme attribute
+  useEffect(()=>{
+    document.documentElement.setAttribute('theme',localStorage.getItem('theme'))
+  },[themeState.theme])
+
   return (
     <div className={styles.container}>
       <Link className={styles.logo} href='/'>
@@ -26,10 +31,20 @@ export default function NavBar(){
           <Icon name='github'></Icon>
         </Link>
         
-        <Link href='love'>
+        <span onClick={() => handleThemeToggle(themeState)}>
+          <Icon name='sun'></Icon>
+        </span>
+        
+        <span href='love'>
           <Icon name='heart-fill'></Icon>
-        </Link>
+        </span>
+
       </nav>
     </div>
   )
+}
+
+function handleThemeToggle ({theme,setTheme}) {
+  theme === 'light' ? setTheme('dark') : setTheme('light')
+  localStorage.setItem('theme',theme)
 }

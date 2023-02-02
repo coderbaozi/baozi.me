@@ -12,7 +12,9 @@ export default function Home({profileData}) {
         </Head>
         <section className={utilStyles.headingMd}>
           <h1 className={utilStyles.headingXl}>{profileData.title}</h1>
-          <div dangerouslySetInnerHTML={{ __html: profileData.contentHtml }} />
+          <article className='markdown'>
+            <div dangerouslySetInnerHTML={{ __html: profileData.contentHtml }} />
+          </article>
         </section>
       </Layout>
     </>

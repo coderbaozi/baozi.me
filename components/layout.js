@@ -4,13 +4,16 @@ import Link from 'next/link'
 import NavBar from './NavBar'
 import utilStyles from '../styles/utils.module.css'
 import styles from '../styles/layout.module.css'
+import { useEffect, useState } from 'react'
 
 const name = 'baozi'
 export const siteTitle = `Baozi`
+
 export default function Layout({children,home}){
+  const [theme,setTheme] = useState('light')
   return (
-    <div theme='light' className='layout'>
-      <NavBar></NavBar>
+    <div className='layout'>
+      <NavBar themeState={{theme,setTheme}}></NavBar>
       <div className={styles.container}>
         <Head>
           <link rel='icon' href='/favicon.ico'/>

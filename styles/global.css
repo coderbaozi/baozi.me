@@ -39,11 +39,15 @@ a {
   src: url('/logo.ttf') format(truetype);
 }
 
+body {
+  background-color: var(--surface3);
+}
+
 /* theme-light */
-.layout[theme='light'] {
-  --surface1: #e6e6e6;
+:root[theme='light'] {
+  --surface1: #ffffff;
   --surface2: #f2f2f2;
-  --surface3: #ffffff;
+  --surface3: #EAEAEF;
   --element1: #111111;
   --element2: #222222;
   --element3: #5B5855;
@@ -59,17 +63,23 @@ a {
   --mark: #047135;
 }
 /* theme-dark */
-.layout[theme='dark'] {
-  --surface1: #262626;
+:root[theme='dark'] {
+  --surface1: #404040;
   --surface2: #333333;
-  --surface3: #404040;
+  --surface3: #050505;
   --element1: #eeeeee;
   --element2: #dddddd;
   --element3: #cccccc;
-  --element4: #374151;
-  --fonthover: #374151;
+  --element4: #B4B4B4;
+  --element5: #373737;
+  --fonthover: #ffffff;
   --elementInverse: #111;
   --primary: #8fceff;
   --secondary: #72faca;
   --tertiary: #eee8a9;
+}
+
+.markdown {
+  color: var(--element2);
+  font-size: 18px;
 }
