@@ -5,7 +5,7 @@ import stylesPost from '../../styles/listPost.module.css'
 import SubNav from "../../components/SubNav"
 import PostUtil from "../../utils/post"
 
-const postUtil = new PostUtil('talk')
+const postUtil = new PostUtil('recored')
 export default function ListPosts({postsData}) {
   return (
     <Layout>
@@ -21,7 +21,7 @@ export default function ListPosts({postsData}) {
                 </div>
               ):''}
             <li className={stylesPost.blog}>
-              <Link href={`talks/${data.id}`}>
+              <Link href={`recoreds/${data.id}`}>
               <p className={stylesPost.title}>{data.title}</p>
               <p className={stylesPost.date}>
                 <Date dateString={data.date}></Date>

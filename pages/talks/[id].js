@@ -4,8 +4,7 @@ import Head from 'next/head';
 import utilStyles from '../../styles/utils.module.css'
 import PostUtil from "../../utils/post"
 
-
-const postUtil = new PostUtil('blog')
+const postUtil = new PostUtil('talk')
 export default function Post({postData}) {
   return (
     <Layout>

@@ -2,8 +2,9 @@ import Layout from "../../components/layout"
 import Date from "../../components/date"
 import Link from 'next/link'
 import stylesPost from '../../styles/listPost.module.css'
-import { getSortedPostsData } from "../../utils/posts"
 import SubNav from "../../components/SubNav"
+import PostUtil from "../../utils/post"
+const postUtil = new PostUtil('blog')
 export default function ListPosts({postsData}) {
   return (
     <Layout>
@@ -36,7 +37,7 @@ export default function ListPosts({postsData}) {
 }
 
 export function getStaticProps() {
-  const postsData = getSortedPostsData()
+  const postsData = postUtil.getSortedPostsData()
   return {
     props: {
       postsData
