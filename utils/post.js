@@ -1,9 +1,14 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { remark } from 'remark'
-import html from 'remark-html'
-
+import { unified } from 'unified'
+import remarkParse from 'remark-parse';
+import remarkRehype from 'remark-rehype';
+import rehypeHighlight from 'rehype-highlight';
+import rehypeDocument from 'rehype-document';
+import rehypeFormat from 'rehype-format';
+import rehypeStringify from 'rehype-stringify';
+import remarkGfm from 'remark-gfm';
 export default class PostUtil{
 
   constructor(dataDir){
@@ -59,10 +64,16 @@ getAllPostIds () {
   const matterResult = matter(fileContents)
 
   // Use remark to convert markdown into HTML string
-  const processedContent = await remark()
-    .use(html)
+  const processedContent = await unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkRehype)
+    .use(rehypeHighlight)
+    .use(rehypeDocument)
+    .use(rehypeFormat)
+    .use(rehypeStringify)
     .process(matterResult.content);
-  const contentHtml = processedContent.toString()
+  const contentHtml = processedContent.value
 
   // Combine the data with the id
   return {

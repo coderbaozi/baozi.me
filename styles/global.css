@@ -55,6 +55,15 @@ body {
   --element5: #D1D1D1;
   --element6: #E7E7E7;
   --element7: #FBFBFB;
+  --hljs0: #f3f3f3;
+  --hljs1: #444444;
+  --hljs2: #697070;
+  --hljs3: #7d7d7d;
+  --hljs4: #7c160d;
+  --hljs5: #ab5656;
+  --hljs6: #71975c;
+  --hljs7: #48711e;
+  --hljs9: #4d8fb2;
   --fonthover: #374151;
   --elementInverse: #eee;
   --primary: #01408e;
@@ -72,6 +81,15 @@ body {
   --element3: #cccccc;
   --element4: #B4B4B4;
   --element5: #373737;
+  --hljs0: #333333;
+  --hljs1: #d0d0d0;
+  --hljs2: #c3c6c6;
+  --hljs3: #cbcbcb;
+  --hljs4: #cba29e;
+  --hljs5: #ab5656;
+  --hljs6: #ddbbbb;
+  --hljs7: #b6c6a5;
+  --hljs9: #b8d2e0;
   --fonthover: #ffffff;
   --elementInverse: #111;
   --primary: #8fceff;
@@ -82,4 +100,168 @@ body {
 .markdown {
   color: var(--element2);
   font-size: 18px;
+}
+
+/* Markdown Format CSS */
+.markdown p,
+.markdown ul,
+.markdown ol {
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--element1);
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.markdown hr {
+  margin: 20px 0;
+}
+
+.markdown li {
+  margin: 5px 0;
+}
+
+.markdown h1 {
+  font-size: 24px;
+}
+
+.markdown h2 {
+  font-size: 22px;
+}
+
+.markdown h3 {
+  font-size: 20px;
+}
+
+.markdown h4 {
+  font-size: 18px;
+}
+
+.markdown h5,
+.markdown h6 {
+  font-size: 16px;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  color: var(--element3);
+}
+
+.markdown blockquote {
+  padding: 8px 20px;
+  border-left: 5px solid var(--element6);
+  margin-left: 0;
+}
+
+.markdown code {
+  background-color: var(--hljs0);
+  padding: 3px;
+  margin: 0 2px;
+  border-radius: 5px;
+}
+
+.markdown p img {
+  max-width: 100%;
+  margin: 5px 0;
+}
+
+.markdown table {
+  margin: 10px auto;
+  color: var(--element1);
+}
+
+.markdown td {
+  border-top: 1px solid var(--element2);
+}
+
+.markdown a {
+  text-decoration: underline;
+  text-decoration-color: var(--element1);
+}
+
+.markdown a:hover {
+  color: #047135;
+}
+
+
+/* Original highlight.js style */
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+code.hljs {
+  padding: 3px 5px;
+}
+.hljs {
+  background: var(--hljs0);
+  color: var(--hljs1);
+}
+.hljs-comment {
+  color: var(--hljs2);
+}
+.hljs-punctuation,
+.hljs-tag {
+  color: var(--hljs3);
+}
+.hljs-tag .hljs-attr,
+.hljs-tag .hljs-name {
+  color: var(--hljs1);
+}
+.hljs-attribute,
+.hljs-doctag,
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-name,
+.hljs-selector-tag {
+  font-weight: 500;
+}
+.hljs-deletion,
+.hljs-number,
+.hljs-quote,
+.hljs-selector-class,
+.hljs-selector-id,
+.hljs-string,
+.hljs-template-tag,
+.hljs-type {
+  color: var(--hljs4);
+}
+.hljs-section,
+.hljs-title {
+  color: var(--hljs4);
+  font-weight: 500;
+}
+.hljs-link,
+.hljs-operator,
+.hljs-regexp,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-symbol,
+.hljs-template-variable,
+.hljs-variable {
+  color: var(--hljs5);
+}
+.hljs-literal {
+  color: var(--hljs6);
+}
+.hljs-addition,
+.hljs-built_in,
+.hljs-bullet,
+.hljs-code {
+  color: var(--hljs7);
+}
+.hljs-meta {
+  color: var(--hljs7);
+}
+.hljs-meta .hljs-string {
+  color: var(--hljs9);
+}
+.hljs-emphasis {
+  font-style: italic;
+}
+.hljs-strong {
+  font-weight: 500;
 }
