@@ -1,12 +1,8 @@
-\---
+---
+title: "Custom Hooks Initial Implementation"
 
-title: 'Custom Hooks Initial Implementation'
-
-date: '2023-03-1'
-
-\---
-
-
+date: "2023-03-1"
+---
 
 # Custom Hooks Initial Implementation
 
@@ -15,11 +11,11 @@ In React framework, Custom Hook is a strong function. It can extract similar cod
 Here are its entry practices. Let's go to code. The example is our familiar form Input.
 
 ```jsx
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function Form() {
-  const [firstName, setFirstName] = useState('Mary');
-  const [lastName, setLastName] = useState('Poppins');
+  const [firstName, setFirstName] = useState("Mary");
+  const [lastName, setLastName] = useState("Poppins");
 
   function handleFirstNameChange(e) {
     setFirstName(e.target.value);
@@ -39,17 +35,20 @@ export default function Form() {
         Last name:
         <input value={lastName} onChange={handleLastNameChange} />
       </label>
-      <p><b>Good morning, {firstName} {lastName}.</b></p>
+      <p>
+        <b>
+          Good morning, {firstName} {lastName}.
+        </b>
+      </p>
     </>
   );
 }
-
 ```
 
 In the case ,It's not hard to find every input label have `value` and `onChange` props, and them logic is amazing same. At this time, custom hook born. Now create the first custom hook is named `useFormInput`.
 
 ```jsx
-import { useState } from 'react';
+import { useState } from "react";
 
 export function useFormInput(initialValue) {
   const [value, setValue] = useState(initialValue);
@@ -60,22 +59,21 @@ export function useFormInput(initialValue) {
 
   const inputProps = {
     value: value,
-    onChange: handleChange
+    onChange: handleChange,
   };
 
   return inputProps;
 }
-
 ```
 
 Lastly, modify our code. The custom hook is completed!
 
 ```jsx
-import { useFormInput } from './useFormInput.js';
+import { useFormInput } from "./useFormInput.js";
 
 export default function Form() {
-  const firstNameProps = useFormInput('Mary');
-  const lastNameProps = useFormInput('Poppins');
+  const firstNameProps = useFormInput("Mary");
+  const lastNameProps = useFormInput("Poppins");
 
   return (
     <>
@@ -87,14 +85,15 @@ export default function Form() {
         Last name:
         <input {...lastNameProps} />
       </label>
-      <p><b>Good morning, {firstNameProps.value} {lastNameProps.value}.</b></p>
+      <p>
+        <b>
+          Good morning, {firstNameProps.value} {lastNameProps.value}.
+        </b>
+      </p>
     </>
   );
 }
-
 ```
-
-
 
 Refer:
 
