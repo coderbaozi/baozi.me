@@ -1,7 +1,9 @@
 ---
-title: "Custom Hooks Initial Implementation"
 
-date: "2023-03-1"
+title: 'Custom Hooks Initial Implementation'
+
+date: '2023-03-01'
+
 ---
 
 # Custom Hooks Initial Implementation
