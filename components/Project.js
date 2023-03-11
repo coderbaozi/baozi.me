@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import style from '../styles/project.module.css'
-import Icon from './Icon'
+import { Icon } from '@iconify/react'
 export default function Project({name,description,icon,repo,tech}) {
   return (
   <Link href={repo}>

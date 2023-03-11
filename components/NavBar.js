@@ -1,8 +1,10 @@
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import styles from '../styles/navbar.module.css'
-import Icon from './Icon'
+import { Icon } from '@iconify/react';
+
 export default function NavBar({themeState}){
+  const [love,setLove] = useState(false)
   // toggle html theme attribute
   useEffect(()=>{
     document.documentElement.setAttribute('theme',localStorage.getItem('theme'))
@@ -27,17 +29,23 @@ export default function NavBar({themeState}){
           Talks
         </Link>
 
-        <Link href='https://github.com/coderbaozi'>
-          <Icon name='github'></Icon>
-        </Link>
-        
-        <span onClick={() => handleThemeToggle(themeState)}>
-          <Icon name='sun'></Icon>
-        </span>
-        
-        <span href='love'>
-          <Icon name='heart-fill'></Icon>
-        </span>
+        <div>
+          <Link href='https://github.com/coderbaozi'>
+            <Icon icon="iconoir:github-circle" />
+          </Link>
+        </div>
+
+        <div>
+          <a onClick={() => handleThemeToggle(themeState)}>
+            <Icon icon='ph:sun-duotone' />
+          </a>
+        </div>
+
+        <div>
+          <a>
+            <Icon className={love?styles.heart:''} onClick={() => handleClickLove({love,setLove})} icon={getleLove({love,setLove})} />
+          </a>
+        </div>
 
       </nav>
     </div>
@@ -47,4 +55,16 @@ export default function NavBar({themeState}){
 function handleThemeToggle ({theme,setTheme}) {
   theme === 'light' ? setTheme('dark') : setTheme('light')
   localStorage.setItem('theme',theme)
+}
+
+function getleLove({love}) { 
+  if(!love) return 'mdi:cards-heart-outline'
+  return 'mdi:cards-heart'
+}
+
+function handleClickLove({love,setLove}){
+  if(!love) 
+    setLove(true)
+  else 
+    setLove(false)
 }

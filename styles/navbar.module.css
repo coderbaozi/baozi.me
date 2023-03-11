@@ -19,19 +19,20 @@
   justify-content: center;
 }
 
-
-.nav a,.nav > span{
+.nav a{
   cursor: pointer;
   font-size: 18px;
   font-weight: 500;
   color: var(--element4);
 }
-
-.nav a span,.nav > span{
-  font-size: 26px;
+.nav div a {
+  font-size:22px
 }
 
 .nav a:hover{
   color: var(--fonthover);
 }
 
+.heart {
+  color: #8B0000;
+}
