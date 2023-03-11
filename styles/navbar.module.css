@@ -36,3 +36,14 @@
 .heart {
   color: #8B0000;
 }
+
+@media screen and (max-width: 500px) {
+  .logo {
+    display: none;
+  }
+  .nav {
+    position: absolute;
+    margin-top: 40px;
+    right: 10vw;
+  }
+}
