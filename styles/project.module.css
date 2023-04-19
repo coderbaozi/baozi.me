@@ -31,10 +31,6 @@
   color: var(--element5);
 }
 
-.project:hover {
-  background-color: var(--element7);
-}
-
 .project:hover .name {
   color: var(--element2);
 }
