@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import Layout, {siteTitle} from '../components/layout'
+import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
-import {parseProfileMd} from '../utils/parse'
+import { parseProfileMd } from '../utils/parse'
 
 export default function Home({profileData}) {
   return (

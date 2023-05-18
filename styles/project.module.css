@@ -12,13 +12,12 @@
 .tech span {
   font-size: 1em;
   color: var(--mark);
-  font-weight: 700;
   opacity: 0.6;
   position: absolute;
 }
 
 .icon {
-  font-size: 3em;
+  font-size: 1em;
   color: var(--element3);
 }
 

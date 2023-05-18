@@ -47,7 +47,7 @@ body {
 :root[theme='light'] {
   --surface1: #ffffff;
   --surface2: #f2f2f2;
-  --surface3: #EAEAEF;
+  --surface3: #ffffff;
   --element1: #111111;
   --element2: #222222;
   --element3: #5B5855;
@@ -58,8 +58,8 @@ body {
   --hljs0: #f3f3f3;
   --hljs1: #444444;
   --hljs2: #697070;
-  --hljs3: #7d7d7d;
-  --hljs4: #7c160d;
+  --hljs3: #487;
+  --hljs4: #274e12;
   --hljs5: #ab5656;
   --hljs6: #71975c;
   --hljs7: #48711e;
@@ -73,7 +73,7 @@ body {
 }
 /* theme-dark */
 :root[theme='dark'] {
-  --surface1: #404040;
+  --surface1: #404043;
   --surface2: #333333;
   --surface3: #050505;
   --element1: #eeeeee;
@@ -84,10 +84,10 @@ body {
   --element6: #E7E7E7;
   --element7: #d8d8d8;
   --hljs0: #333333;
-  --hljs1: #d0d0d0;
+  --hljs1: #ffffff;
   --hljs2: #c3c6c6;
-  --hljs3: #cbcbcb;
-  --hljs4: #cba29e;
+  --hljs3: #8FBC8F;
+  --hljs4: #2E8B57;
   --hljs5: #ab5656;
   --hljs6: #ddbbbb;
   --hljs7: #b6c6a5;
@@ -101,7 +101,7 @@ body {
 
 .markdown {
   color: var(--element2);
-  font-size: 18px;
+  font-size: 16px;
 }
 
 /* Markdown Format CSS */
@@ -109,9 +109,10 @@ body {
 .markdown ul,
 .markdown ol {
   font-size: 18px;
-  line-height: 30px;
+  margin: 8px 0;
   color: var(--element1);
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  text-indent: 20px;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .markdown hr {
@@ -123,7 +124,8 @@ body {
 }
 
 .markdown h1 {
-  font-size: 24px;
+  font-size: 28px;
+  display: none;
 }
 
 .markdown h2 {
@@ -162,7 +164,10 @@ body {
   background-color: var(--hljs0);
   padding: 3px;
   margin: 0 2px;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 550;
+
 }
 
 .markdown code::-webkit-scrollbar {
@@ -184,8 +189,9 @@ body {
 }
 
 .markdown a {
-  text-decoration: underline;
-  text-decoration-color: var(--element1);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 16px;
+  text-decoration-color: var(--element5);
 }
 
 .markdown a:hover {

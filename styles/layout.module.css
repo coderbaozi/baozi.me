@@ -13,6 +13,7 @@
 .backToHome {
   color: var(--element3);
   margin: 3rem 0 0;
+  cursor: pointer;
 }
 
 .backToHome:hover {

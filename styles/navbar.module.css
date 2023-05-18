@@ -6,7 +6,7 @@
 }
 
 .logo {
-  font-size: 25px;
+  font-size: 18px;
   color: var(--element1);
   margin-right: auto;
   font-family: logofont;
@@ -21,12 +21,11 @@
 
 .nav a{
   cursor: pointer;
-  font-size: 18px;
-  font-weight: 500;
+  font-size: 16px;
   color: var(--element4);
 }
 .nav div a {
-  font-size:22px
+  font-size: 22px
 }
 
 .nav a:hover{

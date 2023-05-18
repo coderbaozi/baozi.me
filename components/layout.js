@@ -10,6 +10,9 @@ const name = 'baozi'
 export const siteTitle = `Baozi`
 export default function Layout({children,home}){
   const [theme,setTheme] = useState('light')
+  const backPage = () => {
+    history.back(-1)
+  }
   return (
     <div className='layout'>
       <NavBar themeState={{theme,setTheme}}></NavBar>
@@ -25,8 +28,8 @@ export default function Layout({children,home}){
                 priority
                 src="/images/me.jpg"
                 className={utilStyles.borderCircle}
-                height={144}
-                width={144}
+                height={120}
+                width={120}
                 alt=""
               />
             </>
@@ -35,9 +38,9 @@ export default function Layout({children,home}){
         <main>
           {children}
         </main>
-        {!home && useRouter().route!=`/blog`&&(
+        {!home && !['/blog','/project','/talks','/recoreds'].includes(useRouter().route)&&(
           <div className={styles.backToHome}>
-            <Link href="/blog">cd ..</Link>
+            <span onClick={()=>{backPage()}}>cd ..</span>
           </div>
         )}
       </div>
