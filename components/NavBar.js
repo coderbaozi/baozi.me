@@ -10,6 +10,35 @@ export default function NavBar({themeState}){
     document.documentElement.setAttribute('theme',localStorage.getItem('theme'))
   },[themeState.theme])
 
+  function handleThemeToggle ({theme,setTheme},e) {
+    const x = e.clientX
+    const y = e.clientY
+    const endRadius = Math.hypot(
+      Math.max(x, innerWidth - x),
+      Math.max(y, innerHeight - y)
+    )
+    const transition = document.startViewTransition(() => {
+      theme === 'light' ? setTheme('dark') : setTheme('light')  
+      localStorage.setItem('theme',theme)
+    })
+    transition.ready.then(() => {
+          const clipPath = [
+            `circle(0px at ${x}px ${y}px)`,
+            `circle(${endRadius}px at ${x}px ${y}px)`,
+         ];
+          document.documentElement.animate(
+            {
+              clipPath: theme === 'dark' ? clipPath.reverse() : clipPath
+            },
+            {
+              duration: 400,
+              easing: "ease-in",
+              pseudoElement: theme==='dark' ? "::view-transition-old(root)" : "::view-transition-new(root)",
+            }
+          );
+        });
+
+  }
   return (
     <div className={styles.container}>
       <Link className={styles.logo} href='/'>
@@ -36,7 +65,7 @@ export default function NavBar({themeState}){
         </div>
 
         <div>
-          <a onClick={() => handleThemeToggle(themeState)}>
+          <a onClick={(e) => handleThemeToggle(themeState,e)}>
             <Icon icon='ph:sun-duotone' />
           </a>
         </div>
@@ -52,10 +81,6 @@ export default function NavBar({themeState}){
   )
 }
 
-function handleThemeToggle ({theme,setTheme}) {
-  theme === 'light' ? setTheme('dark') : setTheme('light')
-  localStorage.setItem('theme',theme)
-}
 
 function getleLove({love}) { 
   if(!love) return 'mdi:cards-heart-outline'

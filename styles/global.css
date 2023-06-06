@@ -277,3 +277,23 @@ code.hljs {
 .hljs-strong {
   font-weight: 500;
 }
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+:root[theme='light'] ::view-transition-old(root) {
+  z-index: 1;
+}
+:root[theme='light']::view-transition-new(root) {
+  z-index: 999;
+}
+
+::view-transition-old(root) {
+  z-index: 999;
+}
+::view-transition-new(root) {
+  z-index: 1;
+}

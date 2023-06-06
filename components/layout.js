@@ -1,12 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 import NavBar from './NavBar'
 import utilStyles from '../styles/utils.module.css'
 import styles from '../styles/layout.module.css'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/router'
-const name = 'baozi'
 export const siteTitle = `Baozi`
 export default function Layout({children,home}){
   const [theme,setTheme] = useState('light')
