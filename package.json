@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "pagefind": "pagefind --source dist/",
     "build": "next build",
     "start": "next start"
   },
