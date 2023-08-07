@@ -3,9 +3,10 @@ import Date from "../../components/date";
 import Head from 'next/head';
 import utilStyles from '../../styles/utils.module.css'
 import PostUtil from "../../utils/post"
+import Comment from "../../components/comment"
 
 const postUtil = new PostUtil('recored')
-export default function Post({postData}) {
+export default function Post({ postData }) {
   return (
     <Layout>
       <Head>
@@ -20,6 +21,7 @@ export default function Post({postData}) {
           <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
         </article>
       </article>
+      <Comment />
     </Layout>
   );
 }
