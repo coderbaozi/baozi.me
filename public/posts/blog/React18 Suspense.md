@@ -1,3 +1,10 @@
+---
+
+title: 'React18 Suspense'
+
+date: '2023-08-23'
+
+---
 # React18 Suspense
 
 ## prefetch
@@ -188,5 +195,3 @@ export default function Home() {
 }
 
 ```
-
-
